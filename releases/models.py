@@ -2,6 +2,12 @@ from functools import reduce
 from operator import xor
 
 from docutils import nodes
+
+# TODO: remove when newer semantic_version is set up
+# TODO: no I don't know why this doesn't work w/o a preceding wildcard...
+from warnings import filterwarnings
+filterwarnings(action="ignore", category=SyntaxWarning, module=".*semantic_version")
+
 from semantic_version import Version as StrictVersion, Spec
 
 
